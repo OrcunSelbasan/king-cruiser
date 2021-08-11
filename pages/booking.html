@@ -19,27 +19,30 @@
         </div>
         <div class="main-card">
             <div class="container">
-                <form action="">
+                <form action="./ticket.html">
                     <h3>Book some Ocean Time with King Cruiser</h3>
                     <label for="from">Cruising from:</label>
-                    <select name="from" id="from">
+                    <select name="from" id="from" required>
                         <option value="london">London, England</option>
                     </select>
                     <label for="to">Cruising to:</label>
-                    <select name="to" id="to">
+                    <select name="to" id="to" required>
                         <option value="london">New York, USA</option>
                     </select>
                     <label for="departure">Departure:</label>
-                    <input type="date" name="departure-time" id="departure" min="2021-01-01" max="2022-01-01">
+                    <input type="date" name="departure-time" id="departure" min="2021-01-01" max="2022-01-01" required>
                     <label for="return">Return:</label>
-                    <input type="date" name="return-time" id="return" min="2021-01-01" max="2022-01-01">
+                    <input type="date" name="return-time" id="return" min="2021-01-01" max="2022-01-01" required>
                     <label for="vip">VIP ($7000):</label>
+                    <input type="number" name="vip" id="vip-ticket">
                     <button><img src="../img/plus.svg" alt="plus button"></button>
                     <button><img src="../img/minus.svg" alt="minus"></button>
                     <label for="vip">First Class ($1500):</label>
+                    <input type="number" name="first-class" id="first-class-ticket">
                     <button><img src="../img/plus.svg" alt="plus button"></button>
                     <button><img src="../img/minus.svg" alt="minus"></button>
                     <label for="vip">Economy ($1000):</label>
+                    <input type="number" name="economy" id="economy-ticket">
                     <button><img src="../img/plus.svg" alt="plus button"></button>
                     <button><img src="../img/minus.svg" alt="minus"></button>
                     <div class="total-field">
@@ -56,7 +59,7 @@
                             <p><strong>$000</strong></p>
                         </div>
                     </div>
-                    <button id="book-now">Book Now</button>
+                    <button id="book-now" type="submit">Book Now</button>
                 </form>
             </div>
         </div>
