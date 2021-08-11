@@ -1,12 +1,66 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>King Cruiser - Booking</title>
 </head>
+
 <body>
-    
+    <img src="../img/logo.svg" alt="Cruiser logo">
+    <div class="main">
+        <div class="main-text">
+            <h1>Kings Cruiser</h1>
+            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
+                industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and
+                scrambled it to make a type specimen book</p>
+        </div>
+        <div class="main-card">
+            <div class="container">
+                <form action="">
+                    <h3>Book some Ocean Time with King Cruiser</h3>
+                    <label for="from">Cruising from:</label>
+                    <select name="from" id="from">
+                        <option value="london">London, England</option>
+                    </select>
+                    <label for="to">Cruising to:</label>
+                    <select name="to" id="to">
+                        <option value="london">New York, USA</option>
+                    </select>
+                    <label for="departure">Departure:</label>
+                    <input type="date" name="departure-time" id="departure" min="2021-01-01" max="2022-01-01">
+                    <label for="return">Return:</label>
+                    <input type="date" name="return-time" id="return" min="2021-01-01" max="2022-01-01">
+                    <label for="vip">VIP ($7000):</label>
+                    <button><img src="../img/plus.svg" alt="plus button"></button>
+                    <button><img src="../img/minus.svg" alt="minus"></button>
+                    <label for="vip">First Class ($1500):</label>
+                    <button><img src="../img/plus.svg" alt="plus button"></button>
+                    <button><img src="../img/minus.svg" alt="minus"></button>
+                    <label for="vip">Economy ($1000):</label>
+                    <button><img src="../img/plus.svg" alt="plus button"></button>
+                    <button><img src="../img/minus.svg" alt="minus"></button>
+                    <div class="total-field">
+                        <div class="subtotal">
+                            <p><strong>Subtotal</strong></p>
+                            <p><strong>$000</strong></p>
+                        </div>
+                        <div class="vat">
+                            <p><strong>Charge 10% Vat</strong></p>
+                            <p><strong>$000</strong></p>
+                        </div>
+                        <div class="total">
+                            <p><strong>Total</strong></p>
+                            <p><strong>$000</strong></p>
+                        </div>
+                    </div>
+                    <button id="book-now">Book Now</button>
+                </form>
+            </div>
+        </div>
+    </div>
 </body>
+
 </html>
