@@ -5,59 +5,75 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ruthie&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../styles/ticket.css">
     <title>King Cruiser - Ticket</title>
 </head>
 
 <body>
-    <img src="../img/logo.svg" alt="">
-    <div class="main-card">
-        <div class="container">
-            <h1>Your ticket</h1>
-            <p><strong>Ticket No:</strong>
-            <p class="variable">023891213</p>
-            </p>
-            <div class="trip-details">
-                <p><strong>Cruising from:</strong>
-                <p class="variable">London, England</p>
+    <img id="logo" src="../img/logo.svg" alt="">
+    <div class="main">
+        <div class="main-card">
+            <div class="container">
+                <h1>Your ticket</h1>
+                <div class="pair">
+                    <p id="key"><strong>Ticket No: </strong>
+                    <p class="value"> 023891213</p>
+                </div>
                 </p>
-                <p><strong>Cruising to:</strong>
-                <p class="variable">New York, USA</p>
-                </p>
-                <p><strong>Departure:</strong>
-                <p class="variable">07/23/21</p>
-                </p>
-                <p><strong>Return:</strong>
-                <p class="variable">08/03/21</p>
-                </p>
-            </div>
-            <div class="seat-details">
-                <div class="seat-details container">
-                    <div class="seat-details-table">
-                        <div class="ticket-type">
-                            <p><strong>VIP:</strong></p>
-                            <p><strong>First Class:</strong></p>
-                            <p><strong>Economy:</strong></p>
-                        </div>
-                        <div class="ticket-seat">
-                            <p class="variable">seats: 01</p>
-                            <p class="variable">seats: 01</p>
-                            <p class="variable">seats: 02</p>
-                        </div>
-                        <div class="ticket-price">
-                            <p class="variable">$14000</p>
-                            <p class="variable">$1500</p>
-                            <p class="variable">$2000</p>
-                        </div>
+                <div class="trip-details">
+                    <div class="pair">
+                        <p id="key"><strong>Cruising from:</strong> </p>
+                        <p class="value">London, England</p>
                     </div>
-                    <div class="ticket-total">
-                        <p><strong>Total</strong></p>
-                        <p><strong>$17500</strong></p>
+                    <div class="pair">
+                        <p id="key"><strong>Cruising to:</strong> </p>
+                        <p class="value">New York, USA</p>
+                    </div>
+                    <div class="pair">
+                        <p id="key"><strong>Departure:</strong> </p>
+                        <p class="value">07/23/21</p>
+                    </div>
+                    <div class="pair">
+                        <p id="key"><strong>Return:</strong> </p>
+                        <p class="value">08/03/21</p>
                     </div>
                 </div>
-                <img src="../img/logo-red.svg" alt="Red cruiser logo">
+                <!-- <div class="seat-details"> -->
+                <div class="seat-details-container">
+                    <div class="seat-details-table">
+                        <div class="ticket-type" id="ticket-type-id">
+                            <p id="key"><strong>VIP:</strong></p>
+                            <p id="key"><strong>First Class:</strong></p>
+                            <p id="key"><strong>Economy:</strong></p>
+                        </div>
+                        <div class="ticket-seat">
+                            <p class="value">seats: 01</p>
+                            <p class="value">seats: 01</p>
+                            <p class="value">seats: 02</p>
+                        </div>
+                        <div class="ticket-price">
+                            <p class="value">$14000</p>
+                            <p class="value">$1500</p>
+                            <p class="value">$2000</p>
+                        </div>
+                    </div>
+                    <img src="../img/logo-red.svg" alt="Red cruiser logo">
+                </div>
+                <div class="ticket-total">
+                    <p><strong>Total</strong></p>
+                    <p><strong>$17500</strong></p>
+                </div>
+
+                <!--</div> -->
+                <button>Print the ticket</button>
+                <p class="signature">Kings Cruiser</p>
             </div>
-            <button>Print the ticket</button>
-            <p class="signature">Kings Cruiser</p>
         </div>
     </div>
 </body>
