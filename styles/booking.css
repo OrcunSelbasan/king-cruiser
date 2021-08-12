@@ -1,0 +1,167 @@
+body{
+    background-image: url("../img/bg.svg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;
+}
+
+#logo {
+    position: relative;
+    left: 102px;
+    top: 51px;
+}
+
+.main{
+    width: 100%;
+    display: flex;
+}
+
+/* TEXT */
+.main-text{
+    width: 40%;
+    margin:0 102px; 
+    display: flex;
+    flex-direction: column;
+    color: white;
+    justify-content: center;
+}
+
+.main-text h1{
+    font-size: 5vmax;
+    text-shadow: 2px 2px rgba(0, 0, 0, 0.2);
+    margin-bottom: 0;
+}
+
+.main-text p{
+    font-size: 1.5vmax;
+    text-shadow: 2px 2px rgba(0, 0, 0, 0.2);
+}
+/* END OF TEXT */
+
+.main-card{
+    width: 486px;
+    height: 708px;
+    margin: 0 102px;
+    margin-bottom: 102px;
+}
+
+.container{
+    color: black;
+    background-color: white;
+    border-radius: 1em;
+    padding: 25px;
+}
+
+.container h3 {
+    color: #434966;
+    margin-top: 0;
+}
+
+.container label{
+    font-weight: 300;
+}
+
+#from, #to {
+    display: flex;
+    flex-direction: column;
+    margin: 10px 0;
+    width: 100%;
+}
+
+input{
+    border-style: none;
+    border-radius: 0.5em;
+    background-color: #F3F5FF;
+    color: #898888;
+}
+
+select{
+    border-style: none;
+    border-radius: 0.5em;
+    background-color: #F3F5FF;
+    color: #898888;
+    padding: 10px 5px;
+}
+
+/* DEPARTURE & RETURN */
+.dep-date{
+    display: flex;
+    justify-content: space-between;
+}
+.dep-date *{
+    margin: 10px 0;
+}
+
+.dep, .ret{
+    display: flex;
+    flex-direction: column;
+    width: 48%;
+    margin-top: 0;
+}
+
+#departure, #return{
+    padding: 10px 5px;
+}
+/* END OF DEP & RET */
+
+/* TICKET AMOUNT */
+.ticket {
+    display: flex;
+    flex-direction: column;
+}
+
+.ticket-buy{
+    margin: 15px 0;
+    display: flex;
+    justify-content:space-between;
+}
+
+#vip-ticket, #first-class-ticket, #economy-ticket{
+    width: 316px;
+    height: 35px;
+}
+
+.ticket-buy button{
+    width: 40px;
+    height: 40px;
+    padding: 0;
+    margin: 0 5px;
+    border-style: none;
+    background-color: transparent;
+}
+
+.ticket-buy button:active{
+    transition: linear 0.5s;
+    transform: scale(0.9);
+}
+/*END OF TICKET AMOUNT */
+
+/* TOTAL */
+.subtotal{
+    display: flex;
+    justify-content: space-between;
+}
+
+.vat{
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 3px solid black;
+}
+
+.total{
+    display: flex;
+    justify-content: space-between;
+}
+/* END OF TOTAL */
+
+/* BOOK NOW */
+#book-now{
+    background-color: #E33741;
+    border-style: none;
+    border-radius: 0.5em;
+    height: 50px;
+    width: 100%;
+    color: white;
+}
+/* END OF BOOK NOW */
