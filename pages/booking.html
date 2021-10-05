@@ -23,15 +23,27 @@
         </div>
         <div class="main-card">
             <div class="container">
-                <form action="./ticket.html">
+                <form id="ticket-form" action="./ticket.html">
                     <h3>Book some Ocean Time with King Cruiser</h3>
-                    <label for="from" id="from">Cruising from:</label>
+                    <label for="from">Cruising from:</label>
                     <select name="from" id="from" required>
+                        <option selected="true" disabled>From</option>
+                        <option value="newyork">New York, USA</option>
                         <option value="london">London, England</option>
+                        <option value="rome">Rome, Italy</option>
+                        <option value="istanbul">Istanbul, Turkey</option>
+                        <option value="amsterdam">Amsterdam, Holland</option>
+                        <option value="barcelona">Barcelona, Spain</option>
                     </select>
-                    <label for="to" id="to">Cruising to:</label>
+                    <label for="to">Cruising to:</label>
                     <select name="to" id="to" required>
-                        <option value="london">New York, USA</option>
+                        <option selected="true" disabled>To</option>
+                        <option value="newyork">New York, USA</option>
+                        <option value="london">London, England</option>
+                        <option value="rome">Rome, Italy</option>
+                        <option value="istanbul">Istanbul, Turkey</option>
+                        <option value="amsterdam">Amsterdam, Holland</option>
+                        <option value="barcelona">Barcelona, Spain</option>
                     </select>
                     <div class="dep-date">
                         <div class="dep">
@@ -48,45 +60,45 @@
                     <div class="ticket">
                         <label for="vip">VIP ($7000):</label>
                         <div class="ticket-buy">
-                            <input type="number" name="vip" id="vip-ticket">
+                            <input type="number" value="0" name="vip" id="vip-ticket">
                             <div class="btn">
-                                <button id="plus-btn"><img src="../img/plus.svg" alt="plus button"></button>
-                                <button id="minus-btn"><img src="../img/minus.svg" alt="minus"></button>
+                                <button id="plus-btn vip-plus" onclick="increaseValue('vip-ticket')" type="button"><img src="../img/plus.svg" alt="plus button"></button>
+                                <button id="minus-btn vip-minus" onclick="decreaseValue('vip-ticket')" type="button"><img src="../img/minus.svg" alt="minus"></button>
                             </div>
                         </div>
                     </div>
                     <div class="ticket">
                         <label for="first-class">First Class ($1500):</label>
                         <div class="ticket-buy">
-                            <input type="number" name="first-class" id="first-class-ticket">
+                            <input type="number" value="0" name="first-class" id="first-class-ticket">
                             <div class="btn">
-                                <button id="plus-btn"><img src="../img/plus.svg" alt="plus button"></button>
-                                <button id="minus-btn"><img src="../img/minus.svg" alt="minus"></button>
+                                <button id="plus-btn first-plus" onclick="increaseValue('first-class-ticket')" type="button"><img src="../img/plus.svg" alt="plus button"></button>
+                                <button id="minus-btn first-minus" onclick="decreaseValue('first-class-ticket')" type="button"><img src="../img/minus.svg" alt="minus"></button>
                             </div>
                         </div>
                     </div>
                     <div class="ticket">
                         <label for="economy">Economy ($1000):</label>
                         <div class="ticket-buy">
-                            <input type="number" name="economy" id="economy-ticket">
+                            <input type="number" value="0" name="economy" id="economy-ticket">
                             <div class="btn">
-                                <button id="plus-btn"><img src="../img/plus.svg" alt="plus button"></button>
-                                <button id="minus-btn"><img src="../img/minus.svg" alt="minus"></button>
+                                <button id="plus-btn eco-plus" onclick="increaseValue('economy-ticket')" type="button"><img src="../img/plus.svg" alt="plus button"></button>
+                                <button id="minus-btn eco-minus" onclick="decreaseValue('economy-ticket')" type="button"><img src="../img/minus.svg" alt="minus"></button>
                             </div>
                         </div>
                     </div>
                     <div class="total-field">
                         <div class="subtotal">
                             <p><strong>Subtotal</strong></p>
-                            <p><strong>$000</strong></p>
+                            <p id="subtotal"><strong>$000</strong></p>
                         </div>
                         <div class="vat">
                             <p><strong>Charge 10% Vat</strong></p>
-                            <p><strong>$000</strong></p>
+                            <p id="vat"><strong>$000</strong></p>
                         </div>
                         <div class="total">
                             <p><strong>Total</strong></p>
-                            <p><strong>$000</strong></p>
+                            <p id="total"><strong>$000</strong></p>
                         </div>
                     </div>
                     <button id="book-now" type="submit">Book Now</button>
@@ -94,6 +106,7 @@
             </div>
         </div>
     </div>
+    <script src="../js/app.js"></script>
 </body>
 
 </html>
