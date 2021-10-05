@@ -23,25 +23,25 @@
                 <h1>Your ticket</h1>
                 <div class="pair">
                     <p id="key"><strong>Ticket No: </strong>
-                    <p class="value"> 023891213</p>
+                    <p class="ticket-no"> 023891213</p>
                 </div>
                 </p>
                 <div class="trip-details">
                     <div class="pair">
                         <p id="key"><strong>Cruising from:</strong> </p>
-                        <p class="value">London, England</p>
+                        <p class="from">London, England</p>
                     </div>
                     <div class="pair">
                         <p id="key"><strong>Cruising to:</strong> </p>
-                        <p class="value">New York, USA</p>
+                        <p class="to">New York, USA</p>
                     </div>
                     <div class="pair">
                         <p id="key"><strong>Departure:</strong> </p>
-                        <p class="value">07/23/21</p>
+                        <p class="departure">07/23/21</p>
                     </div>
                     <div class="pair">
                         <p id="key"><strong>Return:</strong> </p>
-                        <p class="value">08/03/21</p>
+                        <p class="return">08/03/21</p>
                     </div>
                 </div>
                 <!-- <div class="seat-details"> -->
@@ -53,29 +53,47 @@
                             <p id="key"><strong>Economy:</strong></p>
                         </div>
                         <div class="ticket-seat">
-                            <p class="value">seats: 01</p>
-                            <p class="value">seats: 01</p>
-                            <p class="value">seats: 02</p>
+                            <p class="vip-seat">seats: 01</p>
+                            <p class="first-seat">seats: 01</p>
+                            <p class="eco-seat">seats: 02</p>
                         </div>
                         <div class="ticket-price">
-                            <p class="value">$14000</p>
-                            <p class="value">$1500</p>
-                            <p class="value">$2000</p>
+                            <p class="vip-price">$14000</p>
+                            <p class="first-price">$1500</p>
+                            <p class="eco-price">$2000</p>
                         </div>
                     </div>
                     <img src="../img/logo-red.svg" alt="Red cruiser logo">
                 </div>
                 <div class="ticket-total">
                     <p><strong>Total</strong></p>
-                    <p><strong>$17500</strong></p>
+                    <p class="total"><strong>$17500</strong></p>
                 </div>
 
                 <!--</div> -->
-                <button>Print the ticket</button>
+                <button id="print">Print the ticket</button>
                 <p class="signature">Kings Cruiser</p>
             </div>
         </div>
     </div>
+    <script>
+        document.querySelector(".ticket-no").innerText = [...Array(9).keys()]
+          .map((x) => x * 0 + Math.floor(Math.random() * 10))
+          .join("");
+        document.querySelector(".from").innerText =  localStorage.getItem("from");
+        document.querySelector(".to").innerText =   localStorage.getItem("to");
+        document.querySelector(".departure").innerText =   localStorage.getItem("dep");
+        document.querySelector(".return").innerText =   localStorage.getItem("ret");
+        document.querySelector(".vip-seat").innerText =   localStorage.getItem("vipSeat");
+        document.querySelector(".first-seat").innerText =   localStorage.getItem("firstSeat");
+        document.querySelector(".eco-seat").innerText =   localStorage.getItem("ecoSeat");
+        document.querySelector(".vip-price").innerText =   localStorage.getItem("vipPrice");
+        document.querySelector(".first-price").innerText =   localStorage.getItem("firstPrice");
+        document.querySelector(".eco-price").innerText =   localStorage.getItem("ecoPrice");
+        document.querySelector(".total").innerText =   localStorage.getItem("totalPrice");
+
+        document.querySelector("#print").addEventListener('click', (e) => alert("This feature is unavailable"))
+    </script>
 </body>
 
 </html>
