@@ -77,16 +77,23 @@
         </div>
     </div>
     <script>
+        //Ticket number
         document.querySelector(".ticket-no").innerText = [...Array(9).keys()]
           .map((x) => x * 0 + Math.floor(Math.random() * 10))
           .join("");
+        //Destination
         document.querySelector(".from").innerText =  localStorage.getItem("from");
         document.querySelector(".to").innerText =   localStorage.getItem("to");
-        document.querySelector(".departure").innerText =   localStorage.getItem("dep");
-        document.querySelector(".return").innerText =   localStorage.getItem("ret");
-        document.querySelector(".vip-seat").innerText =   localStorage.getItem("vipSeat");
-        document.querySelector(".first-seat").innerText =   localStorage.getItem("firstSeat");
-        document.querySelector(".eco-seat").innerText =   localStorage.getItem("ecoSeat");
+        //Date
+        depDate = document.querySelector(".departure");
+        retDate = document.querySelector(".return");
+        depDate.innerText =   localStorage.getItem("dep").replaceAll("-", "/").split("/").reverse().join("/");
+        retDate.innerText =   localStorage.getItem("ret").replaceAll("-", "/").split("/").reverse().join("/");
+        // Seat
+        document.querySelector(".vip-seat").innerText =   localStorage.getItem("vipSeat") + " seat";
+        document.querySelector(".first-seat").innerText =   localStorage.getItem("firstSeat") + " seat";
+        document.querySelector(".eco-seat").innerText =   localStorage.getItem("ecoSeat") + " seat";
+        // Price
         document.querySelector(".vip-price").innerText =   localStorage.getItem("vipPrice");
         document.querySelector(".first-price").innerText =   localStorage.getItem("firstPrice");
         document.querySelector(".eco-price").innerText =   localStorage.getItem("ecoPrice");
