@@ -1,5 +1,12 @@
+window.onload = function() {
+  if(!window.location.hash) {
+      window.location = window.location + '#loaded';
+      window.location.reload();
+  }
+}
+
 const form = document.forms["ticket-form"];
-let [from, to, dep, ret, priceSubtotal, priceVat, priceTotal] = [
+let [from, to, dep, ret, priceSubtotal, priceVat, priceTotal, vipInput, firstInput, ecoInput] = [
   form.querySelector("#from"),
   form.querySelector("#to"),
   form.querySelector("#departure"),
@@ -7,9 +14,26 @@ let [from, to, dep, ret, priceSubtotal, priceVat, priceTotal] = [
   form.querySelector("#subtotal"),
   form.querySelector("#vat"),
   form.querySelector("#total"),
+  form.querySelector("#vip-ticket"),
+  form.querySelector("#first-class-ticket"),
+  form.querySelector("#economy-ticket"),
 ];
 
-let info = [];
+let info = [,,,,,];
+let [vipSeat, firstSeat, ecoSeat] = [0, 0, 0];
+
+vipInput.addEventListener('change', (e) => {
+  vipSeat = parseInt(e.target.value);
+  priceUpdate();
+});
+firstInput.addEventListener('change', (e) => {
+  firstSeat = parseInt(e.target.value);
+  priceUpdate();
+});
+ecoInput.addEventListener('change', (e) => {
+  ecoSeat = parseInt(e.target.value);
+  priceUpdate();
+});
 
 // FORM EVENT LISTENER
 form.addEventListener("submit", (e) => {
@@ -21,7 +45,7 @@ form.addEventListener("submit", (e) => {
     alert("Destinations cannot be the same!");
   }else {
     // Store destination info
-    info.push([from.options[from.selectedIndex].text, to.options[to.selectedIndex].text]);
+    info[0]=([from.options[from.selectedIndex].text, to.options[to.selectedIndex].text]);
   }
 
   //TIME
@@ -35,18 +59,16 @@ form.addEventListener("submit", (e) => {
     retVal =
       ret.value /*[retDate.getDate(), retDate.getMonth(), retDate.getFullYear()]*/;
     // Store time info
-    info.push([depVal, retVal]);
+    info[1]=([depVal, retVal]);
   }
 
   //UPDATE INFO
 
   // THOSE CAN BE UPDATE UNTIL CLICKING BOOK NOW BUTTON AS THOSE ARE OUTSIDE OF EVENT LISTENER
   // Store seat amount
-  info.push([vipSeat, firstSeat, ecoSeat]);
+  info[2] = ([vipSeat, firstSeat, ecoSeat]);
   // Store total price of each ticket
-  info.push([vipSeat * 7000, firstSeat * 1500, ecoSeat * 1000]);
-  // Store total price of all tickets
-  info.push([subtotal + subtotal / 10]);
+  info[3] = ([vipSeat * 7000, firstSeat * 1500, ecoSeat * 1000]);
 
 
   localStorage.setItem("from", info[0][0]);
@@ -63,20 +85,21 @@ form.addEventListener("submit", (e) => {
 
 });
 
-let subtotal = 0;
-let [vipSeat, firstSeat, ecoSeat] = [0, 0, 0];
-
 // Live price update 
 const priceUpdate = () => {
+  let subtotal = vipSeat*7000 + firstSeat*1500 + ecoSeat*1000;
   priceSubtotal.innerText = `$${subtotal}`;
   priceVat.innerText = `$${subtotal / 10}`;
   priceTotal.innerText = `$${subtotal + subtotal / 10}`;
+  // Store total price of all tickets
+  info[4] = ([subtotal + subtotal / 10]);
 }
 
 // INCREASE TICKET
 const increaseValue = (selector) => {
   var value = parseInt(document.getElementById(selector).value);
   value++;
+  // console.log(value);
   switch (selector) {
     case "vip-ticket":
       subtotal += 7000;
@@ -129,21 +152,3 @@ const decreaseValue = (selector) => {
   }
   document.getElementById(selector).value = value;
 };
-
-
-// console.log(localStorage.getItem("items"));
-// document.querySelector(".ticket-no").innerText = [...Array(9).keys()]
-//   .map((x) => x * 0 + Math.floor(Math.random() * 10))
-//   .join("");
-// document.querySelector(".from").innerHTML = 
-// document.querySelector(".to").innerHTML = 
-// document.querySelector(".departure").innerHTML = 
-// document.querySelector(".return").innerHTML = 
-// document.querySelector(".vip-seat").innerHTML = 
-// document.querySelector(".first-seat").innerHTML = 
-// document.querySelector(".eco-seat").innerHTML = 
-// document.querySelector(".vip-price").innerHTML = 
-// document.querySelector(".first-price").innerHTML = 
-// document.querySelector(".eco-price").innerHTML = 
-// document.querySelector(".total").innerHTML = 
-

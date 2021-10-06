@@ -1,5 +1,5 @@
 body{
-    background-image: url("../img/bg.svg");
+    background-image: url("../img/bg.png");
     background-size: cover;
     background-repeat: no-repeat;
     font-family: 'Roboto', sans-serif;
@@ -72,6 +72,7 @@ body{
 }
 
 .seat-details-table{
+    width: 70%;
     display: grid;
     grid-template-columns: auto auto auto auto;
     grid-template-rows: auto auto auto auto;
@@ -90,7 +91,7 @@ body{
 
 .ticket-total{
     display: flex;
-    width: 301px;
+    width: 69%;
     justify-content: space-between;
 }
 
