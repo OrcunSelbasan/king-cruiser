@@ -60,7 +60,7 @@
                     <div class="ticket">
                         <label for="vip">VIP ($7000):</label>
                         <div class="ticket-buy">
-                            <input type="number" value="0" name="vip" id="vip-ticket">
+                            <input type="number" value="0" name="vip" id="vip-ticket" min="0" oninput="validity.valid||(value='')"> 
                             <div class="btn">
                                 <button id="plus-btn vip-plus" onclick="increaseValue('vip-ticket')" type="button"><img src="../img/plus.svg" alt="plus button"></button>
                                 <button id="minus-btn vip-minus" onclick="decreaseValue('vip-ticket')" type="button"><img src="../img/minus.svg" alt="minus"></button>
@@ -70,7 +70,7 @@
                     <div class="ticket">
                         <label for="first-class">First Class ($1500):</label>
                         <div class="ticket-buy">
-                            <input type="number" value="0" name="first-class" id="first-class-ticket">
+                            <input type="number" value="0" name="first-class" id="first-class-ticket" min="0" oninput="validity.valid||(value='')">
                             <div class="btn">
                                 <button id="plus-btn first-plus" onclick="increaseValue('first-class-ticket')" type="button"><img src="../img/plus.svg" alt="plus button"></button>
                                 <button id="minus-btn first-minus" onclick="decreaseValue('first-class-ticket')" type="button"><img src="../img/minus.svg" alt="minus"></button>
@@ -80,7 +80,7 @@
                     <div class="ticket">
                         <label for="economy">Economy ($1000):</label>
                         <div class="ticket-buy">
-                            <input type="number" value="0" name="economy" id="economy-ticket">
+                            <input type="number" value="0" name="economy" id="economy-ticket" min="0" oninput="validity.valid||(value='')">
                             <div class="btn">
                                 <button id="plus-btn eco-plus" onclick="increaseValue('economy-ticket')" type="button"><img src="../img/plus.svg" alt="plus button"></button>
                                 <button id="minus-btn eco-minus" onclick="decreaseValue('economy-ticket')" type="button"><img src="../img/minus.svg" alt="minus"></button>
