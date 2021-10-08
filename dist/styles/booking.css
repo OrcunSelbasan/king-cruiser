@@ -8,8 +8,8 @@ body{
 
 #logo {
     position: relative;
-    left: 102px;
-    top: 51px;
+    left: 20px;
+    top: 20px;
 }
 
 .main{
@@ -17,9 +17,11 @@ body{
     display: flex;
 }
 
+
+
 /* TEXT */
 .main-text{
-    width: 40%;
+    width: 30%;
     margin:0 102px; 
     display: flex;
     flex-direction: column;
@@ -28,20 +30,20 @@ body{
 }
 
 .main-text h1{
-    font-size: 5vmax;
+    font-size: 4em;
     text-shadow: 2px 2px rgba(0, 0, 0, 0.2);
     margin-bottom: 0;
 }
 
 .main-text p{
-    font-size: 1.5vmax;
+    font-size: 1.25em;
     text-shadow: 2px 2px rgba(0, 0, 0, 0.2);
 }
 /* END OF TEXT */
 
 .main-card{
     width: 486px;
-    height: 708px;
+    height: 50%;
     margin: 0 102px;
     margin-bottom: 102px;
 }
@@ -131,6 +133,11 @@ select{
     background-color: transparent;
 }
 
+.btn{
+    display: flex;
+
+}
+
 .ticket-buy button:active{
     transition: linear 0.5s;
     transform: scale(0.9);
@@ -165,3 +172,16 @@ select{
     color: white;
 }
 /* END OF BOOK NOW */
+
+/* Media Queries */
+@media screen and (max-width: 898px){
+    .main{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .main-text{
+        width: 80%;
+    }
+}
