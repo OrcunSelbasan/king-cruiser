@@ -19,7 +19,7 @@ let [from, to, dep, ret, priceSubtotal, priceVat, priceTotal, vipInput, firstInp
   form.querySelector("#economy-ticket"),
 ];
 
-// INCREASE TICKET
+// Increase ticket
 const increaseValue = (selector) => {
   var value = parseInt(document.getElementById(selector).value);
   value++;
@@ -46,7 +46,7 @@ const increaseValue = (selector) => {
   document.getElementById(selector).value = value;
 };
 
-//DECREASE TICKET
+// Decrease ticket
 const decreaseValue = (selector) => {
   var value = parseInt(document.getElementById(selector).value);
   if (value > 0) {
@@ -77,7 +77,14 @@ const decreaseValue = (selector) => {
   document.getElementById(selector).value = value;
 };
 
-
+// Time Validation
+const validTime = (dateOne, dateTwo) => {
+  let now = new Date();
+  valueNow =  now.getFullYear() + now.getMonth() + now.getDate();
+  valueDateOne = dateOne.getFullYear() + dateOne.getMonth() + dateOne.getDate();
+  valueDateTwo = dateTwo.getFullYear() + dateTwo.getMonth() + dateTwo.getDate();
+  return (valueDateOne >= valueNow && valueDateTwo >= valueNow);
+}
 // Live price update 
 const priceUpdate = () => {
   let subtotal = vipSeat*7000 + firstSeat*1500 + ecoSeat*1000;
@@ -127,7 +134,7 @@ form.addEventListener("submit", (e) => {
   //TIME
   const depDate = new Date(dep.value);
   const retDate = new Date(ret.value);
-  if (retDate.getTime() < depDate.getTime()) {
+  if (retDate.getTime() < depDate.getTime() || !validTime(depDate,retDate)) {
     alert("Invalid Date");
     validationFail = true;
   } else {
