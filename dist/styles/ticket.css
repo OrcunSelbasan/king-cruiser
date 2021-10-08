@@ -8,8 +8,8 @@ body{
 
 #logo {
     position: relative;
-    left: 102px;
-    top: 51px;
+    left: 20px;
+    top: 5px;
 }
 
 .main{
@@ -58,11 +58,16 @@ body{
     margin-top: 0;
 }
 
+.pair * {
+    width: max-content;
+}
+
 .trip-details{
     display: grid;
     grid-template-columns: auto auto;
     grid-template-rows: auto auto;
     justify-items: start;
+    gap: 10px;
 }
 
 .seat-details-container{
@@ -114,4 +119,14 @@ button{
     margin-top: 10px;
     font-family: 'Ruthie', cursive;
     color:#434966;
+}
+
+.from, .to, .departure, .return, .vip-seat, .first-seat, .eco-seat, .vip-price, .first-price, .eco-price{
+    font-weight: 500;
+    margin-left: 0.5em;
+    color: #898888;
+}
+
+.ticket-type{
+    font-weight: 500;
 }
