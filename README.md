@@ -1,5 +1,5 @@
 # Basic Booking Site
-Consist of  **Booking Page** and **Ticket Page**
+Consist of  **Booking Page** and **Ticket Page**. Check the site: https://orcunsel-king-cruiser.netlify.app/#loaded
 
 ## Booking Page
 ### Destination input:
